@@ -26,6 +26,9 @@ export default {
     serviceMachine() {
       this.$store.dispatch("serviceMachine");
     }
+  },
+  created() {
+    this.$store.dispatch("fetchLastServicedDate");
   }
 };
 </script>

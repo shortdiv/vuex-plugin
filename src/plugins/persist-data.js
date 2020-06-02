@@ -1,4 +1,5 @@
-const persistTime = 24 * 60 * 60 * 1000; // 1 day
+// const persistTime = 24 * 60 * 60 * 1000; // 1 day in ms
+const persistTime = 60 * 1000; // 1 min
 
 const persistDataPlugin = store => {
   store.subscribe((mutation, state) => {

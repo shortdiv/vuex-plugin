@@ -30,6 +30,14 @@ export default new Vuex.Store({
   actions: {
     serviceMachine({ commit }) {
       commit("updateServiceDate", new Date());
+    },
+    fetchLastServicedDate({ commit }) {
+      let obj = JSON.parse(localStorage.getItem("last_serviced"));
+      if (new Date(obj.persistFor) < new Date()) {
+        commit("updateServiceDate", new Date());
+      } else {
+        commit("updateServiceDate", new Date(obj.dateTime));
+      }
     }
   },
   mutations: {
