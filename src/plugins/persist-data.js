@@ -18,18 +18,10 @@ const persistDataPlugin = store => {
   });
   store.subscribeAction({
     before: (action, state) => {
-      if (action.type === "serviceMachine") {
-        const timeLapsed = new Date().getTime() - state.lastServiced.getTime();
-        console.log(`${timeLapsed / 1000} seconds passed`);
-        console.log("before");
-        console.log(state.lastServiced);
-      }
+      console.log("before", action, state);
     },
     after: (action, state) => {
-      if (action.type === "serviceMachine") {
-        console.log("after");
-        console.log(state.lastServiced);
-      }
+      console.log("after", action, state);
     }
   });
 };
