@@ -1,11 +1,12 @@
 import Vuex from "vuex";
 import Vue from "vue";
-import persistDataPlugin from "../plugins/persist-data";
+// remember to import plugin
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  plugins: [persistDataPlugin],
+  // add plugin here //
+  plugins: [],
   state: {
     machineName: "Wash Bucket",
     lastServiced: new Date()
